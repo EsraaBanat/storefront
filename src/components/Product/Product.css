@@ -1,0 +1,10 @@
+
+.container{
+    /* background-color: red;
+    padding:0.5%;
+    margin: 0;
+    width: 100%; */
+    display: flex;
+    justify-content: center;
+    padding-left: 120px;
+}

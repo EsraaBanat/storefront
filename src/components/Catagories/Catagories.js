@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useEffect } from 'react';
 import Box from '@mui/material/Box';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
@@ -6,12 +6,16 @@ import Tab from '@mui/material/Tab';
 import { connect } from 'react-redux';
 import { activeCatagory, reset } from '../../app/productReducer';
 
- function Catagories(props) {
+ function Catagories(props,) {
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+   
+   useEffect(() => {
+     props.activeCatagory('Food')
+   },[])
 
   return (
     <Box sx={{ width: '100%', bgcolor: 'background.paper' }}>

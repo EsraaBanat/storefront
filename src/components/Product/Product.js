@@ -6,6 +6,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
+import './Product.css'
 
 import {connect} from 'react-redux';
 import {activeCatagory, reset} from '../../app/productReducer';
@@ -43,10 +44,13 @@ function Product(props) {
     return (
         <>
             <h2>{props.data[0].categoryAssociation}</h2>
-            <Grid
-              container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }} >
+            <div className='container'>
+            <Grid container spacing={{ xs: 1, md: 5}} columns={{ xs: 4, sm: 8, md: 12 }} style={{
+                                    display: 'flex'
+                                }}>
                 {products()}
             </Grid>
+            </div>
         </>
     );
 }
