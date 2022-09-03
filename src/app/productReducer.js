@@ -134,7 +134,7 @@ let initialState = {
             description: "Trendy Queen Women’s Fall Long Sleeve Peplum Tunic Tops Casual V Neck Flowy Tiered T Shirts Babydoll Ruffle Swing Blouse",
             price: "19.9$",
             inventoryCount: 323,
-            image: "https://source.unsplash.com/random?Top shirt"
+            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCBxIdivaN6bI79VSuu3c3YSgNK9N2gQEIyw&usqp=CAU"
         },
         {
             categoryAssociation: "Fashion",
@@ -142,7 +142,7 @@ let initialState = {
             description: "Bellivera Womens High Waist Faux Suede Leather Mini A-Line Short Bodycon Skirt for Spring and Fall",
             price: "19.9$",
             inventoryCount: 323,
-            image: "https://source.unsplash.com/random?skirt"
+            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5vOlNICfEzVoXLm0Ii594ROVAAqI33jvorw&usqp=CAU"
         },
         {
             categoryAssociation: "Fashion",
@@ -150,7 +150,7 @@ let initialState = {
             description: "Drimmaks Women's Summer Casual Dress Florals Buttons Down Ruched Sweetheart Neck Sleeveless Midi Sundress",
             price: "19.9$",
             inventoryCount: 323,
-            image: "https://source.unsplash.com/random?dress"
+            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0LRH2vDs0J3J8km9i6tiHTp5FJgSWFL07kQ&usqp=CAU"
         },
         
     ],
