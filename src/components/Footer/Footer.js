@@ -15,7 +15,7 @@ const Item = styled(Paper)(({theme}) => ({
 
 export default function Footer() {
     return (
-        <Box>
+        <Box style={{position:'fixed', bottom: '0'}}>
             <Item>© 2022 Javascript 401 React + Redux + Material U</Item>
         </Box>
     )

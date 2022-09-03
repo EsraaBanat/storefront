@@ -152,6 +152,14 @@ let initialState = {
             inventoryCount: 323,
             image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0LRH2vDs0J3J8km9i6tiHTp5FJgSWFL07kQ&usqp=CAU"
         },
+        {
+            categoryAssociation: "Fashion",
+            displayName: "Shoes",
+            description: "Mens Running Shoes Walking Non Slip Blade Type Sneakers",
+            price: "19.9$",
+            inventoryCount: 53,
+            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSP3w47xVgXorXdKDAGko9B56MvBBxsRN77bA&usqp=CAU"
+        },
         
     ],
 }

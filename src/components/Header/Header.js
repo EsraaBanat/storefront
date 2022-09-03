@@ -8,12 +8,11 @@ import IconButton from '@mui/material/IconButton';
 
 export default function Header() {
     return (
-        <div>
             <Box sx={{
                 flexGrow: 1
-            }}>
+            }} >
                 <AppBar position="static">
-                    <Toolbar>
+                    <Toolbar style={{dipaly:'center'}} >
                         <IconButton
                             size="large"
                             edge="start"
@@ -25,16 +24,14 @@ export default function Header() {
                         </IconButton>
                         <Typography
                             variant="h6"
-                            component="div"
+                            component=""
                             sx={{
                             flexGrow: 1
-                        }}>
+                        }} >
                             Shopperia Store
                         </Typography>
                     </Toolbar>
                 </AppBar>
             </Box>
-
-        </div>
     )
 }
