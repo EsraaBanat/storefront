@@ -22,7 +22,7 @@ function Product(props) {
                             component="img"
                             height="140"
                             image={product.image}
-                            alt="product image"/>
+                            alt="product image" style={{width:350, height:200}}/>
                         <CardContent>
                             <Typography gutterBottom variant="h5" component="">
                                 {product.displayName}
