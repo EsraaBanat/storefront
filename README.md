@@ -61,4 +61,4 @@ The application will be created with the following overall architecture and meth
 
 <br>
 
-## [Deployed Link](https://6310de57ee0c622078906c9b--kaleidoscopic-shortbread-798f5e.netlify.app/)
+## [Deployed Link](https://comforting-biscuit-2bb0ff.netlify.app/)
