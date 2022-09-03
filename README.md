@@ -61,4 +61,4 @@ The application will be created with the following overall architecture and meth
 
 <br>
 
-## [Deployed Link](https://comforting-biscuit-2bb0ff.netlify.app/)
+## [Deployed Link](https://storefront-one-lime.vercel.app/)
