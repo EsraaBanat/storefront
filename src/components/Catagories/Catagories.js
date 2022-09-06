@@ -1,7 +1,5 @@
 import React, { useEffect } from 'react';
-import Box from '@mui/material/Box';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
+import {Box , Tab , Tabs} from '@mui/material';
 
 import { connect } from 'react-redux';
 import { activeCatagory, reset } from '../../app/productReducer';
@@ -15,7 +13,7 @@ import { activeCatagory, reset } from '../../app/productReducer';
    
    useEffect(() => {
      props.activeCatagory('Food')
-   },[])
+   }, []);
 
   return (
     <Box sx={{ width: '100%', bgcolor: 'background.paper' }}>
