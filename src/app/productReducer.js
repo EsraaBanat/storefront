@@ -1,7 +1,5 @@
-
 let initialState = {
-    products: [
-          {
+    products: [{
             categoryAssociation: "Food",
             displayName: "Apple",
             description: "A juicy crispy fruit you can pick from a tree.",
@@ -160,11 +158,11 @@ let initialState = {
             inventoryCount: 53,
             image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSP3w47xVgXorXdKDAGko9B56MvBBxsRN77bA&usqp=CAU"
         },
-        
+
     ],
 }
 // eslint-disable-next-line import/no-anonymous-default-export
-export default  (state = initialState, action) => {
+export default (state = initialState, action) => {
     const {
         type,
         payload
@@ -177,11 +175,57 @@ export default  (state = initialState, action) => {
                 }
                 return null;
             })
-            return {products:products};
-            case 'RESET':
-                return initialState;
-            default:
-                return state;
+            return {...state,
+                products: products
+            };
+        case 'ADD_ITEM':
+            let addedProduct = state.products.map((data) => {
+                if (data.displayName === payload.displayName) {
+                    data.inventoryCount--;
+                    return data;
+                }
+                return null;
+            })
+            // const addedProduct = state.products.map(data => {
+            //     if (data.displayName === payload.displayName) {
+            //         return {
+            //             ...data,
+            //             inventoryCount
+            //         };
+            //     }
+
+            //     return data;
+            // });
+            // console.log('dddddd', addedProduct);
+            // console.log('hhhhhhhhh', state);
+            return state;
+        case 'VIEW_DETAILS':
+            let viewedProduct = state.products.filter((data) => {
+                if (data.displayName === payload.displayName) {
+                    return data;
+                }
+                return null;
+            })
+            // console.log('2222222', viewedProduct);
+            return {
+                products: viewedProduct
+            };
+        case 'DELETE_ITEM':
+            var deletedItem = state.products.indexOf(payload);
+            // console.log({deletedItem});
+            state.products.splice(deletedItem, 1);
+            let total = state.totalItems - 1;
+            let state2 = {
+                ...state,
+                totalItems: total
+            }
+            // console.log(state);
+            // console.log(state2);
+            return state2;
+        case 'RESET':
+            return initialState;
+        default:
+            return state;
     }
 }
 
@@ -192,6 +236,13 @@ export const activeCatagory = (name) => {
     console.log(name)
     return {
         type: 'Active_Catagory',
+        payload: name
+    }
+}
+export const viewDetails = (name) => {
+    // console.log(name)
+    return {
+        type: 'VIEW_DETAILS',
         payload: name
     }
 }

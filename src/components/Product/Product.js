@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {
     Card,
     CardActions,
@@ -11,16 +11,21 @@ import {
 import './Product.css'
 
 import {connect} from 'react-redux';
-import { activeCatagory, reset } from '../../app/productReducer';
-import { addIteamToCart } from '../../app/cartReducer';
+import { activeCatagory,viewDetails, reset } from '../../app/productReducer';
+import { addIteamToCart } from '../../app/actions';
 
 
 function Product(props) {
+    const [count, setCount] = useState(0);
     // console.log(props.data)
+    useEffect(() => {
+        products();
+        console.log('oooooo', products());
+    }, [count]);
     const products = () => (props.data.map((product, idx) => {
         return (
-            <Grid item xs={2} sm={4} md={4}>
-                < Card key={idx} sx={{
+            <Grid key={idx}  item xs={2} sm={4} md={4}>
+                < Card  sx={{
                     maxWidth: 345
                 }}>
                     <CardMedia
@@ -39,15 +44,25 @@ function Product(props) {
                         <Typography variant="body2" color="text.secondary">
                             {product.description}
                         </Typography>
+                        <br/>
+                        <Typography variant="h6" gutterBottom>
+                            {`Price : ${product.price}`} 
+                        </Typography>
+                        <Typography variant="subtitle1" gutterBottom>
+                            {`In Stock : ${product.inventoryCount}`} 
+                        </Typography>
                     </CardContent>
-                    <CardActions>
+                    <CardActions style={{justifyContent:'center'}}>
                         <Button
                             size="small"
                             onClick={() => {
                             // console.log('8888');
-                            props.addIteamToCart(product)
+                                props.addIteamToCart(product);
+                                setCount(count + 1);
                         }}>Add To Cart</Button>
-                        <Button size="small">VIEW DETAILS</Button>
+                        <Button size="small" onClick={() => {
+                                props.viewDetails(product);
+                        }} >VIEW DETAILS</Button>
                     </CardActions>
                 </Card>
             </Grid>
@@ -84,7 +99,8 @@ const mapStateToProps = (state) => ({data: state.productReducer.products})
 const mapDispatchToProps = {
     activeCatagory,
     reset,
-    addIteamToCart
+    addIteamToCart,
+    viewDetails
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Product);
