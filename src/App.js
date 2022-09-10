@@ -6,8 +6,8 @@ import Product from './components/Product/Product';
 import './App.css';
 
 function App() {
-  const [active, setActive] = useState(false)
-  console.log(active)
+  // const [active, setActive] = useState(false)
+  // console.log(active)
   return (
     <div className="App">
       <Header/>

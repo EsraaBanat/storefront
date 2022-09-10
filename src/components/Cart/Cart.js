@@ -7,17 +7,17 @@ import {
     Button,
     Typography,
     Grid,
-    Alert,
-    Popover
+    Popover,
+    Stack
 } from '@mui/material';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import './Cart.css';
 
 import {connect} from 'react-redux';
-import {deleteItem} from '../../app/cartReducer'
+import { deleteItem , addIteamToCart } from '../../app/actions';
 
 function Cart(props) {
-
+    const [count, setCount] = useState(1);
     const [anchorEl,
         setAnchorEl] = useState(null);
 
@@ -53,13 +53,24 @@ function Cart(props) {
                         <Typography gutterBottom variant="h5" component="">
                             {product.displayName}
                         </Typography>
-                        <Typography variant="body2" color="text.secondary">
-                            {product.description}
+                        <br/>
+                        <Stack direction="row" spacing={4}>
+                            <Button size="medium" color="secondary" variant="contained" onClick={() => {
+                                // props.addIteamToCart(product);
+                                setCount(count+1);
+                            }} >+</Button>
+                        <Typography variant="h5" color="text.secondary">
+                            {count}
                         </Typography>
+                            <Button size="medium" color="secondary" variant="contained" onClick={() => {
+                                setCount(count > 0 ? count - 1:0);
+                                // props.deleteItem(product);
+                            }} >-</Button>
+                         </Stack>
                     </CardContent>
                     <CardActions>
                         <Button
-                            size="small"
+                            size="medium"
                             onClick={() => {
                                 props.deleteItem(product);
                                 handleClose();
@@ -100,7 +111,9 @@ function Cart(props) {
 const mapStateToProps = (state) => ({ products: state.cartReducer.products });
 
 const mapDispatchToProps = {
-deleteItem
+    deleteItem,
+    addIteamToCart,
+
 };
 
 export default connect(mapStateToProps,mapDispatchToProps)(Cart);
